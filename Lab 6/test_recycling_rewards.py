@@ -9,3 +9,7 @@ def test_collection_accepted():
     assert collection_accepted(20, 2, False) is True
 
 # Write the rest of the test cases so that the code is 90-100% covered.
+
+
+def test_paper_above_minimum_without_bonus():
+    assert reward_points("paper", 8, False) == 18
