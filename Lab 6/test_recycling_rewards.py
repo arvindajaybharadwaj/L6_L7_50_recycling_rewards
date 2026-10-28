@@ -20,3 +20,6 @@ def test_metal_high_weight():
 
 def test_morning_slot_open():
     assert slot_status(25, True, False) == "open"
+
+def test_hazardous_collection_within_limit():
+    assert collection_accepted(4, 2, True) is True
