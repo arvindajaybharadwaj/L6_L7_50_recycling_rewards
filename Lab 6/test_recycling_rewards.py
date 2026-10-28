@@ -31,3 +31,13 @@ def test_evening_holiday_slot_statuses():
 
 def test_overweight_collection_rejected():
     assert collection_accepted(55, 2, False) is False
+
+# branch coverage
+
+def test_invalid_material():
+    with pytest.raises(ValueError, match="unknown material"):
+        reward_points("glass", 10, False)
+
+def test_negative_weight():
+    with pytest.raises(ValueError, match="invalid weight"):
+        reward_points("paper", -1, False)
