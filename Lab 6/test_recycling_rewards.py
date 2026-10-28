@@ -23,3 +23,11 @@ def test_morning_slot_open():
 
 def test_hazardous_collection_within_limit():
     assert collection_accepted(4, 2, True) is True
+
+def test_evening_holiday_slot_statuses():
+    assert slot_status(25, False, True) == "open"
+    assert slot_status(15, False, True) == "late"
+    assert slot_status(5, False, True) == "missed"
+
+def test_overweight_collection_rejected():
+    assert collection_accepted(55, 2, False) is False
