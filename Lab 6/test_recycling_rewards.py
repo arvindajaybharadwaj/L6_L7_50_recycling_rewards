@@ -13,3 +13,10 @@ def test_collection_accepted():
 
 def test_paper_above_minimum_without_bonus():
     assert reward_points("paper", 8, False) == 18
+
+def test_metal_high_weight():
+    assert reward_points("metal", 25, False) == 414
+
+
+def test_morning_slot_open():
+    assert slot_status(25, True, False) == "open"
